@@ -1,0 +1,58 @@
+name: PlayerUtilities
+version: 1.0.0
+main: com.lozaine.playerutilities.PlayerUtilities
+api-version: '1.21'
+description: Provides various utilities for players including fly, god mode, and world teleportation.
+author: Lozaine
+depend: [Multiverse-Core]
+softdepend: []
+
+commands:
+  fly:
+    description: Toggles flight mode and adjust flight speed
+    usage: /fly [speed]
+    permission: playerutilities.fly
+    permission-message: You don't have permission to use this command.
+    aliases: [flight]
+
+  god:
+    description: Toggles god mode with full health/hunger restoration
+    usage: /god
+    permission: playerutilities.god
+    permission-message: You don't have permission to use this command.
+    aliases: [godmode, invulnerable]
+
+  worldtp:
+    description: Opens a GUI to teleport between worlds
+    usage: /worldtp
+    permission: playerutilities.teleport
+    permission-message: You don't have permission to use this command.
+    aliases: [wtp, worldteleport]
+
+permissions:
+  playerutilities.fly:
+    description: Allows player to toggle flight and adjust flight speed
+    default: op
+
+  playerutilities.god:
+    description: Allows player to toggle god mode
+    default: op
+
+  playerutilities.god.others:
+    description: Allows player to toggle god mode for other players
+    default: op
+    children:
+      playerutilities.god: true
+
+  playerutilities.teleport:
+    description: Allows player to teleport between worlds
+    default: op
+
+  playerutilities.*:
+    description: Gives access to all PlayerUtilities commands
+    default: op
+    children:
+      playerutilities.fly: true
+      playerutilities.god: true
+      playerutilities.god.others: true
+      playerutilities.teleport: true
