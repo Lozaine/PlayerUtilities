@@ -1,66 +1,20 @@
 # PlayerUtilities Configuration
 
-# Fly settings
-fly:
-  # Default fly speed (0.1 to 1.0)
-  default-speed: 0.1
-  # Maximum fly speed allowed (0.1 to 1.0)
-  max-speed: 1.0
-  # Whether to enable fly mode automatically on login if it was enabled before
-  auto-enable: true
-
-# God mode settings
-god:
-  # Whether to enable god mode automatically on login if it was enabled before
-  auto-enable: true
-  # Whether to restore health when god mode is enabled
-  restore-health: true
-  # Whether to restore hunger when god mode is enabled
-  restore-hunger: true
-
-# World teleport settings
-teleport:
-  # Customize world display names in the teleport GUI
-  world-display-names:
-    world: "Main World"
-    world_nether: "The Nether"
-    world_the_end: "The End"
-
-  # Custom material mappings for worlds in the GUI
-  # Valid materials: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
-  world-materials:
-    world: GRASS_BLOCK
-    world_nether: NETHERRACK
-    world_the_end: END_STONE
-
-  # Add lore to world items in the GUI
-  world-lore:
-    world:
-      - "The main overworld"
-      - "Survival gamemode"
-    world_nether:
-      - "The fiery nether realm"
-      - "Be careful of lava!"
-    world_the_end:
-      - "Home of the Ender Dragon"
-      - "Bring enderpearls!"
-
-# Storage settings
-storage:
-  # How often to auto-save player states (in minutes)
-  auto-save-interval: 10
-
-# Message settings
+# Settings for messages
 messages:
-  prefix: "&7[&bPlayerUtilities&7] "
-  fly-enabled: "&aFly mode enabled."
-  fly-disabled: "&cFly mode disabled."
-  fly-speed-set: "&aFly speed set to &e{speed}&a."
-  god-enabled: "&aGod mode enabled. Health and hunger restored."
-  god-disabled: "&cGod mode disabled."
-  teleporting: "&aTeleporting to &e{world}&a..."
-  teleported: "&aSuccessfully teleported to &e{world}&a!"
+  prefix: "&8[&bPlayerUtilities&8] &f"
 
-# Player data storage - DO NOT EDIT MANUALLY
-# This section will be automatically managed by the plugin
-players: {}
+# Default options for new players
+defaults:
+  fly-enabled: false
+  god-mode: false
+  fly-speed: 0.1
+
+# Player data (will be populated automatically)
+# Format: UUID: {fly: true/false, godmode: true/false, flyspeed: 0.1-1.0}
+players:
+# Example:
+# 00000000-0000-0000-0000-000000000000:
+#   fly: true
+#   godmode: false
+#   flyspeed: 0.5
