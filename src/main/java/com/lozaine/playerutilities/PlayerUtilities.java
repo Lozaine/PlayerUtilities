@@ -46,14 +46,16 @@ public class PlayerUtilities extends JavaPlugin implements Listener {
         String playerUUID = player.getUniqueId().toString();
 
         // Check if player had fly mode enabled previously
-        if (config.getBoolean("players." + playerUUID + ".fly", false)) {
+        boolean defaultFly = config.getBoolean("defaults.fly-enabled", false);
+        if (config.getBoolean("players." + playerUUID + ".fly", defaultFly)) {
             player.setAllowFlight(true);
             player.setFlying(true);
             player.sendMessage(ChatColor.GREEN + "Your fly mode has been automatically restored.");
         }
 
         // Check if player had god mode enabled previously
-        if (config.getBoolean("players." + playerUUID + ".godmode", false)) {
+        boolean defaultGod = config.getBoolean("defaults.god-mode", false);
+        if (config.getBoolean("players." + playerUUID + ".godmode", defaultGod)) {
             // Enable god mode
             enableGodMode(player);
             player.sendMessage(ChatColor.GREEN + "Your god mode has been automatically restored.");

@@ -28,7 +28,7 @@ permissions:
     default: op
   playerutilities.worldtp:
     description: Allows players to teleport between worlds
-    default: op
+    default: true
   playerutilities.god:
     description: Allows players to toggle god mode
     default: op
