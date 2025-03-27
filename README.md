@@ -1,7 +1,7 @@
 # PlayerUtilities Minecraft Plugin
 
 ## Description
-PlayerUtilities is a comprehensive Bukkit/Spigot plugin that provides essential player management features for Minecraft servers. The plugin offers convenient commands to enhance player mobility and administrative control.
+PlayerUtilities is a comprehensive Bukkit/Spigot plugin that provides essential player management features for Minecraft servers. The plugin offers convenient commands to enhance player mobility, administrative control, and quality of life improvements.
 
 ## Features
 - **Fly Command** (`/fly`)
@@ -23,11 +23,18 @@ PlayerUtilities is a comprehensive Bukkit/Spigot plugin that provides essential 
   - Supports multiple worlds
   - Visually distinguishes world types
 
+- **Random Teleport Command** (`/rtp`)
+  - Teleport to a random safe location
+  - Intelligent location selection
+  - Prevents teleporting into dangerous areas
+  - Configurable teleport radius
+
 ## Commands
 - `/fly [player]` - Toggle fly mode
 - `/flyspeed <speed>` - Set fly speed (0.1-1.0)
 - `/worldtp` - Open world teleport GUI
 - `/god [player]` - Toggle god mode
+- `/rtp` - Teleport to a random safe location
 
 ## Permissions
 - `playerutilities.fly` - Use fly command on self
@@ -36,6 +43,7 @@ PlayerUtilities is a comprehensive Bukkit/Spigot plugin that provides essential 
 - `playerutilities.worldtp` - Use world teleport
 - `playerutilities.god` - Use god mode on self
 - `playerutilities.god.others` - Use god mode on others
+- `playerutilities.rtp` - Use random teleport
 - `playerutilities.admin` - All permissions
 
 ## Configuration
@@ -43,6 +51,7 @@ The plugin uses a `config.yml` to store:
 - Message prefixes
 - Default player settings
 - Persistent player states
+- Customizable RTP settings
 
 ## Installation
 1. Download the plugin JAR
@@ -52,7 +61,8 @@ The plugin uses a `config.yml` to store:
 
 ## Compatibility
 - Minecraft: 1.21
-- Bukkit/Spigot: 1.21.1-R0.1-SNAPSHOT
+- Spigot: 1.21.5-R0.1-SNAPSHOT
+- Java: 21
 
 ## Building from Source
 1. Ensure you have Java 21 and Gradle installed
