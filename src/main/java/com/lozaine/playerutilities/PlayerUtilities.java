@@ -1,5 +1,6 @@
 package com.lozaine.playerutilities;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -20,6 +21,10 @@ public class PlayerUtilities extends JavaPlugin implements Listener {
         saveDefaultConfig();
         config = getConfig();
 
+        // Register bStats
+        int pluginId = 25272; // PlayerUtilities plugin ID
+        Metrics metrics = new Metrics(this, pluginId);
+
         // Register events
         getServer().getPluginManager().registerEvents(this, this);
 
@@ -28,6 +33,7 @@ public class PlayerUtilities extends JavaPlugin implements Listener {
         getCommand("worldtp").setExecutor(new WorldTeleportCommand(this));
         getCommand("fly").setExecutor(new FlyCommand(this));
         getCommand("god").setExecutor(new GodCommand(this));
+        getCommand("rtp").setExecutor(new RandomTeleportCommand(this));
 
         getLogger().info("PlayerUtilities has been enabled!");
     }

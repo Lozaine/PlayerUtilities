@@ -2,7 +2,7 @@ name: PlayerUtilities
 version: '1.0'
 main: com.lozaine.playerutilities.PlayerUtilities
 api-version: '1.21'
-description: Utilities for player management including fly, godmode, teleport
+description: Utilities for player management including fly, godmode, teleport, and random teleport
 commands:
   flyspeed:
     description: Adjust your fly speed
@@ -22,6 +22,11 @@ commands:
     description: Toggle fly mode
     usage: /<command> [player]
     permission: playerutilities.fly
+  rtp:
+    description: Teleport to a random safe location
+    usage: /<command>
+    permission: playerutilities.rtp
+    aliases: [randomtp]
 permissions:
   playerutilities.flyspeed:
     description: Allows players to change their fly speed
@@ -35,6 +40,9 @@ permissions:
   playerutilities.fly:
     description: Allows players to toggle fly mode
     default: op
+  playerutilities.rtp:
+    description: Allows players to teleport to a random location
+    default: true
   playerutilities.admin:
     description: Gives all permissions
     default: op
@@ -43,3 +51,4 @@ permissions:
       playerutilities.worldtp: true
       playerutilities.god: true
       playerutilities.fly: true
+      playerutilities.rtp: true
